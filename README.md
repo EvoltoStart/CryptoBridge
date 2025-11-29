@@ -1176,7 +1176,6 @@ echo 1 > /sys/module/crypto_bridge/parameters/debug
 ## 📞 技术支持
 
 - **作者**: Meng
-- **许可**: GPL
 - **内核版本**: 4.x / 5.x+
 - **架构**: ARM / x86_64
 
@@ -1198,6 +1197,5 @@ echo 1 > /sys/module/crypto_bridge/parameters/debug
 - ✅ 网络流量加密传输
 - ✅ 安全通信测试
 - ✅ 加密算法验证
-- ✅ 网络协议学习
 
 **开始使用：** `./bridge_board.sh start` 🚀
