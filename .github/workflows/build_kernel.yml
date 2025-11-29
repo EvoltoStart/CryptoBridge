@@ -1,0 +1,29 @@
+name: Build Kernel Module
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-module:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout source
+      - uses: actions/checkout@v4
+
+      # Install kernel headers (用于本地编译模式)
+      - name: Install kernel headers
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y linux-headers-$(uname -r)
+
+      # Build module using your Makefile
+      - name: Build crypto_bridge kernel module
+        run: make
+
+      # Show module info
+      - name: Show module info
+        run: |
+          echo "Built files:"
+          ls -lh *.ko || true
